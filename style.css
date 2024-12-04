@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0%;
+    font-family: "Nunito Sans";
+}
+
+.title{
+    font-weight: 800;
+}
+
+.header-container{
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: auto;
+    max-width: 1200px;
+    padding-inline: 24px;
+}
+
+main{
+    padding: 24px;
+}
+.countries-container{
+    max-width: 1200px;
+    margin-top: 16px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+a{
+    text-decoration-line: none;
+    color: inherit;
+}
+
+.country-card{
+    display: inline-block;
+    width: 250px;
+    border-radius: 5px;
+    background-color: rgb(212 213 217 / 23%);
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding-bottom: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.country-card:hover{
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.country-card img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-text{
+    padding-inline: 16px;
+}
+
+.card-text p{
+    margin-block: 8px;
+}
+.card-title{
+    font-size: 20px;
+    margin-block: 14px;
+}
+
+/* Country CSS */
+
+.container{
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+.back-btn{
+    margin-block: 20px;
+}
+.back-btn button{
+    border: none;
+    padding: 8px 20px;
+    font-size: 16px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.country-container{
+    width: 100%;
+    margin-block: 30px;
+    padding: 16px;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+}
+
+.country-details{
+    width: 80%;
+    padding: 40px;
+}
+
+.country-details h1{
+    margin-top: 0;
+}
+.country-flag{
+    max-width: 500px;
+}
+
+.country-flag img{
+    object-fit: cover;
+    width: 100%;
+}
+.content{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
