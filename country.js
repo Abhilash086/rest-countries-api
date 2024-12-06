@@ -1,4 +1,5 @@
 const countryContainer = document.querySelector(".country-container");
+const modes = document.querySelector("header p")
 
 const countryName = new URLSearchParams(location.search).get("name");
 let countryData
@@ -52,3 +53,13 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
             })
     });
   })
+
+  modes.addEventListener("click",()=>{
+    const body = document.querySelector("body")
+    body.classList.toggle("dark")
+    if(modes.querySelector("span").innerHTML === `&nbsp;&nbsp;Light Mode`){
+        modes.innerHTML = `<i class="fa-regular fa-moon"></i><span>&nbsp;&nbsp;Dark mode</span>`
+    }else if(modes.querySelector("span").innerHTML = `&nbsp;&nbsp;Dark Mode`){
+        modes.innerHTML = `<i class="fa-regular fa-sun"></i><span>&nbsp&nbspLight Mode</span>`    
+    }
+})
