@@ -1,11 +1,21 @@
 const countryContainer = document.querySelector(".country-container");
 
 const countryName = new URLSearchParams(location.search).get("name");
+let countryData
+
+function createButton(border){
+    const btn = document.createElement("a")
+    btn.classList.add("btn")
+    btn.innerText = border
+    btn.href = `/country.html?name=${border}`
+    return btn
+}
 
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
+    countryData = data[0]
+    console.log(countryData.borders)
     countryContainer.innerHTML = `<div class="country-flag">
                                         <img src="${data[0].flags.svg}" alt="">
                                     </div>
@@ -25,9 +35,20 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
                                                 <p><b>Languages: </b>${Object.values(data[0].languages)}</p>
                                             </div>
                                         </div>
-                                        <div>
-                                            <span><b>Border Countries: </b></span>
+                                        <div class="border-container">
+                                            <p><b>Border Countries: </b></p>
+                                            <div class="near-countries"></div>
                                         </div>
                                     </div>`;
+                                    return data
     
-  });
+  }).then((data)=>{
+    data[0].borders.forEach((element) => {
+        fetch(`https://restcountries.com/v3.1/alpha/${element}`).then((res) => res.json())
+            .then((data) =>{
+                const border = data[0].name.common
+                const borderCountriesList = document.querySelector(".near-countries")
+                borderCountriesList.appendChild(createButton(border))
+            })
+    });
+  })

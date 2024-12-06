@@ -89,7 +89,7 @@ a{
 .back-btn{
     margin-block: 20px;
 }
-.back-btn button{
+.btn{
     border: none;
     padding: 8px 20px;
     font-size: 16px;
@@ -126,6 +126,18 @@ a{
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+.border-container{
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.near-countries{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 700px){
