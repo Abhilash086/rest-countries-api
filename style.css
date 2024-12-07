@@ -10,12 +10,14 @@ body{
     color: var(--text-color);
     margin: 0%;
     font-family: "Nunito Sans";
+    transition: all 0.3s ease-in-out;
 }
 
 body.dark {
     --background-color: hsl(207, 26%, 17%);
     --text-color: #ffffffcc;
     --elements-color: hsl(209, 23%, 22%);
+    transition: all 0.3s ease-in-out;
 }
 
 .title{
